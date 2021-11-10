@@ -6,7 +6,7 @@ interface ImageIndex {
   active: boolean;
 };
 export const Container = styled.View`
-  flex: 1;
+  width: 100%;
 `;
 
 export const ImageIndexes = styled.View`
