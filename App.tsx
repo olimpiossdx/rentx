@@ -6,7 +6,8 @@ import { Archivo_400Regular, Archivo_500Medium, Archivo_600SemiBold } from '@exp
 import { Home } from './src/screens/Home';
 import { ThemeProvider } from 'styled-components/native';
 import theme from './src/styles/theme';
-import { CarDetails } from './src/screens/carDetails';
+import { CarDetails } from './src/screens/CarDetails';
+import { Scheduling } from './src/screens/Scheduling';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Inter_400Regular, Inter_500Medium, Archivo_400Regular, Archivo_500Medium, Archivo_600SemiBold });
@@ -16,6 +17,6 @@ export default function App() {
   }
 
   return (<ThemeProvider theme={theme}>
-    <CarDetails />
+    <Scheduling />
   </ThemeProvider>);
 }
