@@ -9,8 +9,9 @@ import gasolineSvg from '../../assets/gasoline.svg';
 import exchangeSvg from '../../assets/exchange.svg';
 import peopleSvg from '../../assets/people.svg';
 
-import { Container, Header, CarImages, Content, Details, Description, Brand, Name, Rent, Period, Price, Acessories, About } from './styles';
+import { Container, Header, CarImages, Content, Details, Description, Brand, Name, Rent, Period, Price, Acessories, About, Footer } from './styles';
 import { Acessory } from '../../components/Acessory';
+import { Button } from '../../components/Button';
 
 export function CarDetails() {
   return (
@@ -46,6 +47,9 @@ export function CarDetails() {
           Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
         </About>
       </Content>
+      <Footer>
+        <Button title='Confirmar' color={''} />
+      </Footer>
 
     </Container>
   )
