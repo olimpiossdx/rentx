@@ -12,6 +12,7 @@ LocaleConfig.locales['pt-br'] = {
   dayNamesShort: ['DOM', 'SEG', 'TER', 'QUA', 'QUIN', 'SEX', 'SÁB'],
   today: 'Hoje'
 };
+
 LocaleConfig.defaultLocale = 'pt-br'
 
 export function Calendar() {
