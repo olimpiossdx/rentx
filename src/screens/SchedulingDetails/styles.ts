@@ -130,3 +130,12 @@ export const DateValue = styled.Text`
   font-size: ${RFValue(15)}px;
 `;
 
+export const RentalPrice = styled.View``;
+
+export const RentalPriceLabel = styled.Text``;
+
+export const RentalPriceDetails = styled.View``;
+
+export const RentalPriceQuota = styled.Text``;
+
+export const RentalPriceTotal = styled.Text``;

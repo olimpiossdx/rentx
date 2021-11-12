@@ -13,8 +13,10 @@ import peopleSvg from '../../assets/people.svg';
 
 import {
   Container, Header, CarImages, Content, Details, Description, Brand, Name, Rent, Period, Price, Acessories,
-  RentalPeriod, CalendarIcon, DateInfo, DateTitle, DateValue, Footer
+  RentalPeriod, CalendarIcon, DateInfo, DateTitle, DateValue, RentalPrice, RentalPriceLabel,RentalPriceTotal,
+  RentalPriceDetails, RentalPriceQuota, Footer
 } from './styles';
+
 import { Acessory } from '../../components/Acessory';
 import { Button } from '../../components/Button';
 import { useTheme } from 'styled-components';
@@ -72,7 +74,8 @@ export function SchedulingDetails() {
         <RentalPrice>
           <RentalPriceLabel>Total</RentalPriceLabel>
           <RentalPriceDetails>
-            <RentalPriceQuota></RentalPriceQuota>
+            <RentalPriceQuota>R$ 580 x3 diárias</RentalPriceQuota>
+            <RentalPriceTotal>R$ 2.900</RentalPriceTotal>
           </RentalPriceDetails>
         </RentalPrice>
       </Content>
