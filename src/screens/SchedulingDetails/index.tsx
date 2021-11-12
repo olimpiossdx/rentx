@@ -63,7 +63,7 @@ export function SchedulingDetails() {
             <DateValue>18/06/2021</DateValue>
           </DateInfo>
 
-          <Feather name='chevron-right' size={RFValue(10)} color={theme.colors.shape} />
+          <Feather name='chevron-right' size={RFValue(15)} color={theme.colors.shape} />
 
           <DateInfo>
             <DateTitle>DE</DateTitle>
