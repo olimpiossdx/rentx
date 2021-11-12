@@ -1,11 +1,6 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true,
-    "paths": {
-      "react-native-calendars": [
-        "node_modules/@types/react-native-calendars"
-      ]
-    },
+    "strict": true
   }
 }
