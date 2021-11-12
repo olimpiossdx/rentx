@@ -13,21 +13,22 @@ export const Header = styled.View`
   align-items: center;
 
   position: absolute;
-  margin-top: ${getStatusBarHeight() + RFValue(18)}px;
-  margin-left: ${RFValue(24)}px;
+  margin-top: ${getStatusBarHeight() + RFValue(9)}px;
+  margin-left: ${RFValue(12)}px;
 `;
 
 export const CarImages = styled.View`
-  margin-top: ${getStatusBarHeight() + RFValue(32)}px;
+  margin-top: ${getStatusBarHeight() + RFValue(16)}px;
 `;
 
 export const Content = styled.ScrollView.attrs({
   contentContainerStyle: {
-    padding: 24,
+    padding: RFValue(24),
     alignItems: 'center'
   },
   showsVerticalIndicator: false
-})``;
+})
+``;
 
 export const Details = styled.View`
   width: 100%;
@@ -36,7 +37,7 @@ export const Details = styled.View`
   align-items: center;
   justify-content: space-between;
 
-  margin-top: ${RFValue(38)}px;
+  margin-top: ${RFValue(28)}px;
 `;
 
 export const Description = styled.View``;
@@ -79,15 +80,15 @@ export const Acessories = styled.View`
   align-items: center;
   justify-content: space-between;
 
-  margin-top: ${RFValue(16)}px;
+  margin-top: ${RFValue(8)}px;
 `;
 
 export const Footer = styled.View`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.background.secondary};
   
-  padding: ${RFValue(24)}px;
-  padding-bottom: ${getBottomSpace() + RFValue(24)}px;
+  padding: ${RFValue(12)}px;
+  padding-bottom: ${getBottomSpace() + RFValue(12)}px;
 `;
 
 export const RentalPeriod = styled.View`
@@ -97,12 +98,12 @@ export const RentalPeriod = styled.View`
   justify-content: space-between;
   align-items: center;
 
-  margin-top: ${RFValue(40)}px;
+  margin-top: ${RFValue(20)}px;
 
   border-bottom-width: 0.5px;
   border-bottom-color: ${({ theme }) => theme.colors.line};
 
-  padding-bottom: ${RFValue(16)}px;
+  padding-bottom: ${RFValue(8)}px;
 `;
 
 export const CalendarIcon = styled.View`
@@ -130,12 +131,34 @@ export const DateValue = styled.Text`
   font-size: ${RFValue(15)}px;
 `;
 
-export const RentalPrice = styled.View``;
+export const RentalPrice = styled.View`
+  width: 100%;
+  margin-top: ${RFValue(16)}px;
+`;
 
-export const RentalPriceLabel = styled.Text``;
+export const RentalPriceLabel = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.primary.medium_500};
+  color: ${({ theme }) => theme.colors.text_detail};
+  font-size: ${RFValue(10)}px;
+  
+  text-transform: uppercase;
+`;
 
-export const RentalPriceDetails = styled.View``;
+export const RentalPriceDetails = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-export const RentalPriceQuota = styled.Text``;
+export const RentalPriceQuota = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.primary.medium_500};
+  color: ${({ theme }) => theme.colors.title};
+  font-size: ${RFValue(15)}px;
+`;
 
-export const RentalPriceTotal = styled.Text``;
+export const RentalPriceTotal = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.secondary.medium_500};
+  color: ${({ theme }) => theme.colors.success};
+  font-size: ${RFValue(24)}px;
+`;
