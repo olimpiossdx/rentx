@@ -1,5 +1,5 @@
 import { Dimensions } from "react-native";
-import styled, { css } from "styled-components/native";
+import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 interface DateValueProps {
@@ -10,7 +10,7 @@ export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.header};
   
-  padding-top: ${RFValue(Dimensions.get('screen').height*.0005)}px;
+  padding-top: ${RFValue(Dimensions.get('screen').height * .0005)}px;
 `;
 
 export const Content = styled.View`
@@ -18,7 +18,7 @@ export const Content = styled.View`
   justify-content: center;
   align-items: center;
 
-  padding-bottom: ${RFValue(Dimensions.get('screen').height*.08)}px;
+  padding-bottom: ${RFValue(Dimensions.get('screen').height * .08)}px;
 `;
 
 
@@ -27,7 +27,7 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.shape};
   font-family: ${({ theme }) => theme.fonts.secondary.semiBold_600};
 
-  margin-top: ${RFValue(Dimensions.get('screen').height*.002)}px;
+  margin-top: ${RFValue(Dimensions.get('screen').height * .002)}px;
 `;
 
 export const Message = styled.Text`
