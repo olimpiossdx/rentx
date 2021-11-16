@@ -10,7 +10,6 @@ import DoneSvg from '../../assets/done.svg';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { ConfirmButton } from '../../components/ConfirmButton';
 
-
 export function SchedulingComplete() {
   const { width } = useWindowDimensions();
 
