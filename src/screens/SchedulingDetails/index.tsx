@@ -13,7 +13,7 @@ import peopleSvg from '../../assets/people.svg';
 
 import {
   Container, Header, CarImages, Content, Details, Description, Brand, Name, Rent, Period, Price, Acessories,
-  RentalPeriod, CalendarIcon, DateInfo, DateTitle, DateValue, RentalPrice, RentalPriceLabel,RentalPriceTotal,
+  RentalPeriod, CalendarIcon, DateInfo, DateTitle, DateValue, RentalPrice, RentalPriceLabel, RentalPriceTotal,
   RentalPriceDetails, RentalPriceQuota, Footer
 } from './styles';
 
@@ -21,11 +21,13 @@ import { Acessory } from '../../components/Acessory';
 import { Button } from '../../components/Button';
 import { useTheme } from 'styled-components';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { StatusBar } from 'react-native';
 
 export function SchedulingDetails() {
   const theme = useTheme();
   return (
     <Container>
+      <StatusBar barStyle='light-content' translucent backgroundColor='transparent' />
       <Header>
         <BackButton onPress={() => { }} />
       </Header>
