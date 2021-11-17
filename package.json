@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
+    "start:service": "yarn json-server .\\src\\services\\server.json --host xxx.xxx.x.xxx --port 3333 --delay 700",
     "test": "jest"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "expo-font": "~10.0.3",
     "expo-splash-screen": "~0.13.5",
     "expo-updates": "~0.10.15",
+    "json-server": "^0.17.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
