@@ -3,13 +3,6 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import BackButton from "../../components/BackButton";
 import { ImageSlider } from "../../components/ImageSlider";
 
-import speedSvg from "../../assets/speed.svg";
-import accelarationSvg from "../../assets/acceleration.svg";
-import forceSvg from "../../assets/force.svg";
-import gasolineSvg from "../../assets/gasoline.svg";
-import exchangeSvg from "../../assets/exchange.svg";
-import peopleSvg from "../../assets/people.svg";
-
 import {
   Container,
   Header,
@@ -29,6 +22,7 @@ import {
 import { Acessory } from "../../components/Acessory";
 import { Button } from "../../components/Button";
 import { CarDTO } from "../../dtos/CarDTO";
+import { getAcessoryIcon } from "../../utils/getAcessoryIcon";
 
 interface Params {
   car: CarDTO;
@@ -73,14 +67,9 @@ export function CarDetails() {
             <Acessory
               key={acessory.type}
               name={acessory.name}
-              icon={speedSvg}
+              icon={getAcessoryIcon(acessory.type)}
             />
           ))}
-          {/* <Acessory name="3.2s" icon={accelarationSvg} />
-          <Acessory name="800 HP" icon={forceSvg} />
-          <Acessory name="Gasoline" icon={gasolineSvg} />
-          <Acessory name="Auto" icon={exchangeSvg} />
-          <Acessory name="2 pessoas" icon={peopleSvg} /> */}
         </Acessories>
         <About>{car.about}</About>
       </Content>

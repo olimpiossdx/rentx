@@ -15,11 +15,13 @@ import {
   CarImage,
 } from "./styles";
 import { CarDTO } from "../../dtos/CarDTO";
+import { getAcessoryIcon } from "../../utils/getAcessoryIcon";
 interface Props extends RectButtonProps {
   data: CarDTO;
 }
 
 export function Car({ data, ...rest }: Props) {
+  const MotoIcon = getAcessoryIcon(data.fuel_type);
   return (
     <Container {...rest}>
       <Details>
@@ -31,7 +33,7 @@ export function Car({ data, ...rest }: Props) {
             <Price>{`R$ ${data.rent.price}`}</Price>
           </Rent>
           <Type>
-            <GasolineSvg />
+            <MotoIcon />
           </Type>
         </About>
       </Details>
