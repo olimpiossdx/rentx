@@ -10,16 +10,14 @@ import { CarDTO } from "../../dtos/CarDTO";
 import api from "../../services/api";
 import { Container, HeaderContent, Header, TotalCars, CarList } from "./styles";
 
-interface Cars {}
-
 export function Home() {
   const navigation = useNavigation();
 
   const [cars, setCars] = useState<CarDTO[]>([]);
   const [loading, setLoading] = useState(true);
 
-  function HandleCarDetails() {
-    navigation.navigate("CarDetails");
+  function HandleCarDetails(car: CarDTO) {
+    navigation.navigate("CarDetails", { car });
   }
 
   useEffect(() => {
@@ -64,7 +62,7 @@ export function Home() {
           data={cars}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <Car data={item} onPress={HandleCarDetails} />
+            <Car data={item} onPress={() => HandleCarDetails(item)} />
           )}
         />
       )}
