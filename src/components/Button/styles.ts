@@ -4,16 +4,16 @@ import styled from "styled-components/native";
 
 interface ButtonProps extends RectButtonProps {
   color: string;
-};
+}
 
-export const Container = styled(RectButton) <ButtonProps>`
+export const Container = styled(RectButton)<ButtonProps>`
   width: 100%;
 
   padding: ${RFValue(19)}px;
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ color, theme }) => color};
+  background-color: ${({ color }) => color};
 `;
 
 export const Title = styled.Text`
