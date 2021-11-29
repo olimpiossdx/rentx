@@ -1,63 +1,84 @@
-import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import BackButton from '../../components/BackButton';
-import { ImageSlider } from '../../components/ImageSlider';
+import React from "react";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import BackButton from "../../components/BackButton";
+import { ImageSlider } from "../../components/ImageSlider";
 
-import speedSvg from '../../assets/speed.svg';
-import accelarationSvg from '../../assets/acceleration.svg';
-import forceSvg from '../../assets/force.svg';
-import gasolineSvg from '../../assets/gasoline.svg';
-import exchangeSvg from '../../assets/exchange.svg';
-import peopleSvg from '../../assets/people.svg';
+import {
+  Container,
+  Header,
+  CarImages,
+  Content,
+  Details,
+  Description,
+  Brand,
+  Name,
+  Rent,
+  Period,
+  Price,
+  Acessories,
+  About,
+  Footer,
+} from "./styles";
+import { Acessory } from "../../components/Acessory";
+import { Button } from "../../components/Button";
+import { CarDTO } from "../../dtos/CarDTO";
+import { getAcessoryIcon } from "../../utils/getAcessoryIcon";
 
-import { Container, Header, CarImages, Content, Details, Description, Brand, Name, Rent, Period, Price, Acessories, About, Footer } from './styles';
-import { Acessory } from '../../components/Acessory';
-import { Button } from '../../components/Button';
+interface Params {
+  car: CarDTO;
+}
 
 export function CarDetails() {
   const navigation = useNavigation();
+  const route = useRoute();
+  const { car } = route.params as Params;
 
-  function HandleConfirmRental() {
-    navigation.navigate('Scheduling');
+  function handleConfirmRental() {
+    navigation.navigate("Scheduling", { car });
+  }
+
+  function handleBack() {
+    navigation.goBack();
   }
 
   return (
     <Container>
       <Header>
-        <BackButton onPress={() => { }} />
+        <BackButton onPress={handleBack} />
       </Header>
 
       <CarImages>
-        <ImageSlider imagesUrl={['https://freepngimg.com/thumb/audi/35227-5-audi-rs5-red.png']} />
+        <ImageSlider imagesUrl={car.photos} />
       </CarImages>
 
       <Content>
         <Details>
           <Description>
-            <Brand>Lamborghini</Brand>
-            <Name>Huracan</Name>
+            <Brand>{car.brand}</Brand>
+            <Name>{car.name}</Name>
           </Description>
           <Rent>
-            <Period>Ao dia</Period>
-            <Price>R$500 </Price>
+            <Period>{car.rent.period}</Period>
+            <Price>R$ {car.rent.price} </Price>
           </Rent>
         </Details>
         <Acessories>
-          <Acessory name='380Km/h' icon={speedSvg} />
-          <Acessory name='3.2s' icon={accelarationSvg} />
-          <Acessory name='800 HP' icon={forceSvg} />
-          <Acessory name='Gasoline' icon={gasolineSvg} />
-          <Acessory name='Auto' icon={exchangeSvg} />
-          <Acessory name='2 pessoas' icon={peopleSvg} />
+          {car.accessories.map((acessory) => (
+            <Acessory
+              key={acessory.type}
+              name={acessory.name}
+              icon={getAcessoryIcon(acessory.type)}
+            />
+          ))}
         </Acessories>
-        <About>
-          Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
-        </About>
+        <About>{car.about}</About>
       </Content>
       <Footer>
-        <Button title='Confirmar' color={''} onPress={HandleConfirmRental} />
+        <Button
+          title="Escolher período do aluguel"
+          onPress={handleConfirmRental}
+        />
       </Footer>
-
     </Container>
-  )
+  );
 }
