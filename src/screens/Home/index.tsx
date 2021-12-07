@@ -8,7 +8,8 @@ import { Car } from "../../components/Car";
 import { Load } from "../../components/Load";
 import { CarDTO } from "../../dtos/CarDTO";
 import api from "../../services/api";
-import { Container, HeaderContent, Header, TotalCars, CarList } from "./styles";
+import { Container, HeaderContent, Header, TotalCars, CarList, MyCardsButton } from "./styles";
+import { Ionicons } from '@expo/vector-icons';
 
 export function Home() {
   const navigation = useNavigation();
@@ -67,8 +68,9 @@ export function Home() {
         />
       )}
 
-      {/* <Car data={carOne} />
-      <Car data={carTwo} /> */}
+      <MyCardsButton>
+        <Ionicons name='ios-car-sport' />
+      </MyCardsButton>
     </Container>
   );
 }
