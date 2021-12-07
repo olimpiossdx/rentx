@@ -40,6 +40,7 @@ export function Scheduling() {
   const navigation = useNavigation();
   const route = useRoute();
   const { car } = route.params as Params;
+
   const [lastSelectedDate, setLastSelectedDate] = useState<IDayProps>(
     {} as IDayProps
   );
