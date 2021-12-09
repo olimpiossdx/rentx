@@ -67,14 +67,16 @@ export function SchedulingDetails() {
   const rentTotal = Number(dates.length * car.rent.price);
 
   async function handleSchedulingCompleteAsync() {
-    const schedulesByCar = await api.get(`/schedules/${car.id}`);
+    const schedulesByCar = await api.get(`/schedules_bycars/${car.id}`);
 
     const unavailable_dates = [
       ...schedulesByCar.data.unavailable_dates,
       ...dates,
     ];
 
-    api.put(`/schedules/${car.id}`, { id: car.id, unavailable_dates })
+    await api.post(``, {});
+
+    api.put(`/schedules_bycars/${car.id}`, { id: car.id, unavailable_dates })
       .then(() => navigation.navigate("SchedulingComplete"))
       .catch(() => Alert.alert('Não foi possível confirmar o agendamento.'));
   }
