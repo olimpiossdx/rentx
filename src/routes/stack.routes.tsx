@@ -12,7 +12,7 @@ import { MyCars } from '../screens/MyCars';
 
 export function StackRoutes() {
   return (
-    <Navigator defaultScreenOptions={{ headerShown: false }}>
+    <Navigator screenOptions={{ headerShown: false }}>
       <Screen name='Home' component={Home} />
       <Screen name='CarDetails' component={CarDetails} />
       <Screen name='Scheduling' component={Scheduling} />

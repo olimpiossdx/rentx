@@ -32,11 +32,11 @@ interface IDayProps {
 }
 
 interface ICalendar {
-  markedData: IMarkedDateProps;
+  markedDates: IMarkedDateProps;
   onDayPress?: (date: DateData) => void;
 }
 
-function Calendar({ markedData, onDayPress }: ICalendar) {
+function Calendar({ markedDates, onDayPress }: ICalendar) {
   const theme = useTheme();
   return (
     <CustomCalendar
@@ -70,6 +70,7 @@ function Calendar({ markedData, onDayPress }: ICalendar) {
       firstDay={1}
       minDate={new Date()}
       markingType="period"
+      markedDates={markedDates}
       onDayPress={onDayPress}
     />
   );

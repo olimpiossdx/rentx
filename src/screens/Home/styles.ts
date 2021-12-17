@@ -42,8 +42,8 @@ export const MyCardsButton = styled(RectButton)`
   width: 60px;
   height: 60px;
   
-  justify-content: cennter;
-  align-items: cennter;
+  justify-content: center;
+  align-items:center;
 
   background-color: ${({ theme }) => theme.colors.main};
 

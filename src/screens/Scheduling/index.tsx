@@ -75,7 +75,7 @@ export function Scheduling() {
     const interval = generateInterval(start, end);
     setMarkedDates(interval);
 
-    const firstDate = Object.keys(interval[0])[0];
+    const firstDate = Object.keys(interval)[0];
     const endDate = Object.keys(interval)[Object.keys(interval).length - 1];
 
     setRentalPeriod({
@@ -118,7 +118,7 @@ export function Scheduling() {
         </RentalPeriod>
       </Header>
       <Content>
-        <Calendar markedData={markedDates} onDayPress={handleChangeDate} />
+        <Calendar markedDates={markedDates} onDayPress={handleChangeDate} />
       </Content>
       <Footer>
         <Button title="Confirmar" onPress={handleSchedulingDetails} enabled={!!rentalPeriod.startFormated} />

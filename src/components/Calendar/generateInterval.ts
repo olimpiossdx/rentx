@@ -11,7 +11,7 @@ export function generateInterval(start: IDayProps, end: IDayProps) {
     start: new Date(start.timestamp),
     end: new Date(end.timestamp),
   }).forEach((item) => {
-    const date = format(getPlatFormDate(item), "yyy-MM-dd");
+    const date = format(getPlatFormDate(item), "yyyy-MM-dd");
     interval = {
       ...interval,
       [date]: {
