@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "api": "yarn json-server .\\src\\services\\server.json --host xxx.xxx.x.xxx --port 3333 --delay 700",
+    "api": "yarn json-server .\\src\\services\\server.json --host 192.168.0.184 --port 3333 --delay 700",
     "test": "jest"
   },
   "dependencies": {
